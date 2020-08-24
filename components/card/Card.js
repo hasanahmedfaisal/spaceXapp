@@ -20,7 +20,7 @@ export default class Card extends React.Component {
             <div className="text missionId">Mission Ids: 
                 <div className="missionIds">{isMissionIdPresent?mission_id.join():"Unavailable"}</div>
             </div>
-            <div className="text launchYr">Launch Year {launch_year}</div>
+            <div className="text launchYr">Launch Year: {launch_year}</div>
             <div className="text launchStatus">Successful Launch: {launch_success? "True" : "False"}</div>
             <div className="text landingStatus">Successful Landing: {land_success? "True" : "False"}</div>
             </div>
