@@ -1,5 +1,5 @@
 import App from '../components/app/App'
-import getRequestDetails from '../helpers/fetchData'
+import getRequestDetails from '../helpers/RequestHelper'
 import { parse } from '../helpers/ResultsParser'
 import Head from 'next/head';
 

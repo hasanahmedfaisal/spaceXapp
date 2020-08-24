@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Button should render correctly 1`] = `
+<div
+  className="buttonDiv"
+>
+  <button
+    className="button isSelected"
+    onClick={[Function]}
+  >
+    2006
+  </button>
+</div>
+`;

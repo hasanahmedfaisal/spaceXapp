@@ -11,8 +11,8 @@ class App extends React.Component {
       <div className="mainContainer">
         <CardFilter filters={this.props.filters}/>
         <div className="cardContainer">
-          {this.props.data.map((item) => (
-            <Card cardProps={item}/>
+          {this.props.data.map((item,index) => (
+            <Card key={index} cardProps={item}/>
             ))}
         </div>
       </div>

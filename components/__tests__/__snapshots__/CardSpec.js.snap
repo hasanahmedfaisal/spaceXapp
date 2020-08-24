@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Filter should render correctly 1`] = `
+<div
+  className="mainCard"
+>
+  <img
+    src="some url"
+  />
+  <div
+    className="text missionName"
+  >
+    some mission name
+     #
+    some flight name
+  </div>
+  <div
+    className="text missionId"
+  >
+    Mission Ids:
+    <div
+      className="missionIds"
+    >
+      123
+    </div>
+  </div>
+  <div
+    className="text launchYr"
+  >
+    Launch Year: 
+    some launch year
+  </div>
+  <div
+    className="text launchStatus"
+  >
+    Successful Launch: 
+    True
+  </div>
+  <div
+    className="text landingStatus"
+  >
+    Successful Landing: 
+    True
+  </div>
+</div>
+`;

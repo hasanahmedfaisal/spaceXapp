@@ -6,8 +6,10 @@ import * as QueryStringHelper from '../../helpers/QueryStringHelper'
 const propTypes = {
     name: PropTypes.oneOfType([PropTypes.string,PropTypes.number]),
     isSelected: PropTypes.bool,
-    filterType: PropTypes.string
+    filterType: PropTypes.string,
+    selectedFilters: PropTypes.objectOf(PropTypes.string)
 }
+
 const defaultProps = {
     isSelected: false
 }

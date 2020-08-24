@@ -1,11 +1,18 @@
 {
   "scripts": {
-    "dev": "next"
+    "dev": "next",
+    "test": "jest",
+    "test:coverage": "npm test -- --coverage"
   },
   "dependencies": {
     "next": "^9.5.2",
     "next-offline": "^5.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "react-test-renderer": "^16.12.0"
   }
 }
