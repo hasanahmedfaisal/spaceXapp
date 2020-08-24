@@ -11,10 +11,11 @@ export default class CardFilter extends React.Component {
                     <div className="launchYear">Launch Year</div>
                     <div className="buttonContainer">
                         {range(2006,2021).map((val) => (
-                            <FilterButton name={val} 
+                            <FilterButton name={val.toString()} 
                                 filterType="launch_year"
+                                selectedFilters={this.props.filters}
                                 isSelected={!isEmpty(this.props.filters) && !!this.props.filters.launch_year && 
-                                    this.props.filters.launch_year === val} />
+                                    this.props.filters.launch_year === val.toString()} />
                         ))}
                     </div>
                     <div className="launchYear">Successful Launch</div>
@@ -22,6 +23,7 @@ export default class CardFilter extends React.Component {
                         {["True", "False"].map(val => (
                             <FilterButton name={val} 
                                 filterType="launch_success"
+                                selectedFilters={this.props.filters}
                                 isSelected={!isEmpty(this.props.filters) && !!this.props.filters.launch_success && 
                                     this.props.filters.launch_success === val} />
                         ))}
@@ -31,6 +33,7 @@ export default class CardFilter extends React.Component {
                     {["True", "False"].map(val => (
                             <FilterButton name={val} 
                                 filterType="land_success"
+                                selectedFilters={this.props.filters}
                                 isSelected={!isEmpty(this.props.filters) && !!this.props.filters.land_success && 
                                     this.props.filters.land_success === val} />
                         ))}

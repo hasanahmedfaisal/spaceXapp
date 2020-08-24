@@ -15,7 +15,7 @@ const defaultProps = {
 export default class FilterButton extends React.PureComponent {
 
     handleClick = () => {
-        let selectedFilter = { ...this.props.selectedFilter }
+        let selectedFilter = { ...this.props.selectedFilters }
         if (isEmpty(this.props.selectedFilters)) {
             selectedFilter[this.props.filterType] = this.props.name
         }
