@@ -2,7 +2,6 @@ const withOffline = require('next-offline');
 
 const nextConfig = {
   target: 'serverless',
-  dontAutoRegisterSw: true,
   transformManifest: manifest => ['/'].concat(manifest), // add the homepage to the cache
   // Trying to set NODE_ENV=production when running yarn dev causes a build-time error so we
   // turn on the SW in dev mode so that we can actually test it
@@ -12,7 +11,7 @@ const nextConfig = {
     maximumFileSizeToCacheInBytes: 100000000,
     runtimeCaching: [
       {
-        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+        urlPattern: /\.(png|jpg|jpeg|svg)$/,
         handler: 'StaleWhileRevalidate',
         options: {
           cacheName: 'images',

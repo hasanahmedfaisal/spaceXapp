@@ -4,12 +4,6 @@ import Card from '../card/Card'
 import CardFilter from '../cardFilter/CardFilter'
 
 class App extends React.Component {
-  componentDidMount () {
-    register()
-  }
-  componentWillUnmount () {
-    unregister()
-  }
   render(){
     return (
       <div className="App">
