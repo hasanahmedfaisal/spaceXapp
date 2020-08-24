@@ -11,8 +11,8 @@ const nextConfig = {
     maximumFileSizeToCacheInBytes: 100000000,
     runtimeCaching: [
       {
-        urlPattern: /\.(png|jpg|jpeg|svg)$/,
-        handler: 'StaleWhileRevalidate',
+        urlPattern: /.png$/,
+        handler: 'CacheFirst',
         options: {
           cacheName: 'images',
           expiration: {
