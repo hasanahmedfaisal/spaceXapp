@@ -11,7 +11,7 @@ const nextConfig = {
     maximumFileSizeToCacheInBytes: 100000000,
     runtimeCaching: [
       {
-        urlPattern: /.png$/,
+        urlPattern: /https:\/\/images2\.imgbox\.com\/.*/,
         handler: 'CacheFirst',
         options: {
           cacheName: 'images',
