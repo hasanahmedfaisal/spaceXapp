@@ -3,11 +3,13 @@ jobs:
   - stage: Running Unit Tests
     script: "npm install && ./node_modules/.bin/jest --coverage"
   - stage: deploy to production
-    script: skip
     deploy:
-      provider: heroku
-      app: spacex-webap
-      api_key: l3zno8yF5lA4UGJe+GofIPKJfirGHrw2Eq7pIA7+6x6XOdwAUnksxic71J//lpfuhH1gHn7PgHL7C27vummfBR3iu+VHf2p0VJ9GELzXT+1OdYe7/plYEU0BAaBQkJlquWeyNa2hazrI+3XPoA/Z/qhSwqrbkgmK6NjHTsGslMVQaIEdr9wYSq3Sfq974n8OMcJUaafO4SDQEcWcOKytDPJra28UvyXhniLs3LpnnQlV/iF6O11079+8YtmqqiBtsPaqUCUj3KRcwrrzv7ePFiOoMjNoN1zlxe8ja12Vj8OM5dGuTflifauVoQQirxim2KzAoC1I2vaCWA7auE39XHl76+wlG7z3Buvb+XYt/xIOW1o7pVopBttvtQxGBJ1w1VnSJU5l93xHeKhyiL61Bv8DGiX0ZAClMJv+1pkhIiDmnBsPXKro/YYKEJBqleEYE97d9jqwWEkB6qL+pidgUEyV0GpvmPermaLCljkW6ydAH8brg/SD7WclE7OXDi9nyF/sAdoW8tGbGR41svXDxCujur+ObDUMPeOYF7gjS0ANUql84LxnKPTbihCcAcSRV8h3i1ZGUrJgfRe6rX+/asMmfzcVRwM087yOSM7vFfrJFyZg0KW9dOKFAH7zXOVXTNkYncAhrTrdI7zbJUzuCYaGaX0zuWoEdvPJcLGnj4Q=
+    provider: heroku
+    api_key:
+      secure: l3zno8yF5lA4UGJe+GofIPKJfirGHrw2Eq7pIA7+6x6XOdwAUnksxic71J//lpfuhH1gHn7PgHL7C27vummfBR3iu+VHf2p0VJ9GELzXT+1OdYe7/plYEU0BAaBQkJlquWeyNa2hazrI+3XPoA/Z/qhSwqrbkgmK6NjHTsGslMVQaIEdr9wYSq3Sfq974n8OMcJUaafO4SDQEcWcOKytDPJra28UvyXhniLs3LpnnQlV/iF6O11079+8YtmqqiBtsPaqUCUj3KRcwrrzv7ePFiOoMjNoN1zlxe8ja12Vj8OM5dGuTflifauVoQQirxim2KzAoC1I2vaCWA7auE39XHl76+wlG7z3Buvb+XYt/xIOW1o7pVopBttvtQxGBJ1w1VnSJU5l93xHeKhyiL61Bv8DGiX0ZAClMJv+1pkhIiDmnBsPXKro/YYKEJBqleEYE97d9jqwWEkB6qL+pidgUEyV0GpvmPermaLCljkW6ydAH8brg/SD7WclE7OXDi9nyF/sAdoW8tGbGR41svXDxCujur+ObDUMPeOYF7gjS0ANUql84LxnKPTbihCcAcSRV8h3i1ZGUrJgfRe6rX+/asMmfzcVRwM087yOSM7vFfrJFyZg0KW9dOKFAH7zXOVXTNkYncAhrTrdI7zbJUzuCYaGaX0zuWoEdvPJcLGnj4Q=
+    app: spacex-webapp
+    on:
+      repo: hasanahmedfaisal/spaceXapp
   - stage: test prod
     script: 'curl https://spacex-webap.herokuapp.com/'
   
