@@ -3,7 +3,7 @@ jobs:
   - stage: installing dependencies
     script: "npm install"
   - stage: unit tests
-    script: "npm run test:coverage"
+    script: "./node_modules/.bin/jest --coverage"
   - stage: deploy to production
     script: skip
     deploy:
