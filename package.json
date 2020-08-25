@@ -3,8 +3,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "test": "jest",
-    "test:coverage": "npm test -- --coverage"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "next": "^9.5.2",
