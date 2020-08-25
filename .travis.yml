@@ -4,7 +4,7 @@ node_js:
 jobs:
   include:
   - stage: Running Unit Tests
-    script: "npm install && ./node_modules/.bin/jest --coverage"
+    script: "npm install && npm run test:coverage"
   - stage: deploy to production
     deploy:
     provider: heroku
@@ -13,6 +13,4 @@ jobs:
     app: spacex-webapp
     on:
       repo: hasanahmedfaisal/spaceXapp
-  - stage: test prod
-    script: 'curl https://spacex-webap.herokuapp.com/'
   
