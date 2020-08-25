@@ -1,8 +1,10 @@
 jobs:
   include:
+  - stage: installing dependencies
+    script: "npm install"
   - stage: unit tests
-    script: npm run test:coverage
-  - stage: deploy to staging
+    script: "npm run test:coverage"
+  - stage: deploy to production
     script: skip
     deploy:
       provider: heroku
