@@ -135,4 +135,41 @@
         display: list-item;
         margin-left: 25px;
       }
+
+      .loader {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, .9);
+        font-size: 25px;
+      }
+
+      .noLaunchText {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        z-index: 999;
+        font-size: 25px;
+      }
     

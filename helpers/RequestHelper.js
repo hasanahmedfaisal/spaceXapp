@@ -1,6 +1,5 @@
 import { jsonToQueryString } from './QueryStringHelper'
-
-const baseUrl = "https://api.spaceXdata.com/v3/launches?limit=100"
+import Constants from '../config/Constants'
 
 export default function getRequestDetails(query){
     let filters = {}
@@ -10,7 +9,7 @@ export default function getRequestDetails(query){
         }
     })
 
-    const endpoint = `${baseUrl}&${jsonToQueryString(filters)}`
+    const endpoint = `${Constants.ENDPOINTS.baseUrl}&${jsonToQueryString(filters)}`
 
     return {
         endpoint,

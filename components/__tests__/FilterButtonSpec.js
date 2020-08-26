@@ -2,23 +2,24 @@ import FilterButton from '../filterButton/FilterButton'
 import renderer from 'react-test-renderer'
 
 describe('Filter Button',() => {
-    const { location } = window;
+    const { history } = window;
 
   beforeAll(() => {
-    delete window.location;
-    window.location = { assign: jest.fn() };
+    delete window.history;
+    window.history = { pushState: jest.fn() };
   });
 
-  afterEach(() => {
+  beforeEach(() => {
       jest.clearAllMocks()
   })
 
   afterAll(() => {
-    window.location = location;
+    window.history = history;
   });
 
     it('should render correctly',() => {
         const filterButtonProps = {
+            handleClick: jest.fn(),
             name: '2006',
             filterType: 'launch_year',
             isSelected: true,
@@ -32,6 +33,7 @@ describe('Filter Button',() => {
 
    it('should handle onClick with the filter type when selected filters is empty',() => {
         const filterButtonProps = {
+            handleClick: jest.fn(),
             name: '2006',
             filterType: 'launch_year',
             isSelected: true,
@@ -39,11 +41,13 @@ describe('Filter Button',() => {
         }
         const root = renderer.create(<FilterButton {...filterButtonProps}/>).root
         root.findByType("button").props.onClick()
-        expect(window.location.assign).toHaveBeenCalledWith('filters?launch_year=2006')
+        expect(filterButtonProps.handleClick).toHaveBeenCalledWith({"launch_year": "2006"})
+        expect(window.history.pushState).toHaveBeenCalledWith({}, "", "filters?launch_year=2006")
     }) 
 
     it('should handle onClick with no filter when selected filter and on click filter is equal',() => {
         const filterButtonProps = {
+            handleClick: jest.fn(),
             name: '2006',
             filterType: 'launch_year',
             isSelected: true,
@@ -53,11 +57,12 @@ describe('Filter Button',() => {
         }
         const root = renderer.create(<FilterButton {...filterButtonProps}/>).root
         root.findByType("button").props.onClick()
-        expect(window.location.assign).toHaveBeenCalledWith('/')
+        expect(window.history.pushState).toHaveBeenCalledWith({}, "", "/")
     }) 
 
     it('should handle onClick with all filters when selected filter and on click filter is not equal',() => {
         const filterButtonProps = {
+            handleClick: jest.fn(),
             name: '2006',
             filterType: 'launch_year',
             isSelected: true,
@@ -68,6 +73,6 @@ describe('Filter Button',() => {
         }
         const root = renderer.create(<FilterButton {...filterButtonProps}/>).root
         root.findByType("button").props.onClick()
-        expect(window.location.assign).toHaveBeenCalledWith('filters?launch_success=True&land_success=True&launch_year=2006')
+        expect(window.history.pushState).toHaveBeenCalledWith({}, "", "filters?launch_success=True&land_success=True&launch_year=2006")
     }) 
 })

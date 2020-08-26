@@ -2,6 +2,7 @@ import App from '../components/app/App'
 import getRequestDetails from '../helpers/RequestHelper'
 import { parse } from '../helpers/ResultsParser'
 import Head from 'next/head';
+import Constants from '../config/Constants'
 
 const AppContainer = (props) => {
   return (
@@ -19,8 +20,8 @@ const AppContainer = (props) => {
 }
 
 AppContainer.getInitialProps = async ({query}) => {
-  const { endpoint, filters } = getRequestDetails(query)
-  const res = await fetch(endpoint)
+  const { filters } = getRequestDetails(query)
+  const res = await fetch(Constants.ENDPOINTS.baseUrl)
   const result = await res.json()
   const data = parse(result)
 

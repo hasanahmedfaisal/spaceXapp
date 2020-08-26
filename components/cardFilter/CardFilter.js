@@ -14,6 +14,7 @@ export default class CardFilter extends React.Component {
                             <FilterButton name={val.toString()} 
                                 filterType="launch_year"
                                 key={index}
+                                handleClick={this.props.handleClick}
                                 selectedFilters={this.props.filters}
                                 isSelected={!isEmpty(this.props.filters) && !!this.props.filters.launch_year && 
                                     this.props.filters.launch_year === val.toString()} />
@@ -23,7 +24,8 @@ export default class CardFilter extends React.Component {
                     <div className="buttonContainer">
                         {["True", "False"].map((val,index) => (
                             <FilterButton name={val}
-                                key={index} 
+                                key={index}
+                                handleClick={this.props.handleClick} 
                                 filterType="launch_success"
                                 selectedFilters={this.props.filters}
                                 isSelected={!isEmpty(this.props.filters) && !!this.props.filters.launch_success && 
@@ -34,7 +36,8 @@ export default class CardFilter extends React.Component {
                     <div className="buttonContainer">
                     {["True", "False"].map((val,index) => (
                             <FilterButton name={val}
-                                key={index} 
+                                key={index}
+                                handleClick={this.props.handleClick} 
                                 filterType="land_success"
                                 selectedFilters={this.props.filters}
                                 isSelected={!isEmpty(this.props.filters) && !!this.props.filters.land_success && 

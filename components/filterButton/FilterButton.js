@@ -30,10 +30,11 @@ export default class FilterButton extends React.PureComponent {
                 selectedFilter[this.props.filterType] = this.props.name
             }
         }
+        this.props.handleClick(selectedFilter)
         if(isEmpty(selectedFilter))
-            window.location.assign("/")
+            window.history.pushState({},"","/")
         else
-            window.location.assign(`filters?${QueryStringHelper.jsonToQueryString(selectedFilter)}`)
+            window.history.pushState({},"",`filters?${QueryStringHelper.jsonToQueryString(selectedFilter)}`)
     }
 
     render() {
