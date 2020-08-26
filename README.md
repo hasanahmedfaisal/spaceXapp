@@ -17,7 +17,7 @@ Standard in progress
 - [Nextjs](https://nextjs.org/)
 
 ## Installation
-Make sure you have [Node.js 10.13 or later](Node.js 10.13)
+Make sure you have [Node.js 10.13 or later](https://nodejs.org/)
 Below Steps should help in installation and running the application locally:
 ```
 npm i
