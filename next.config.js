@@ -24,20 +24,6 @@ const nextConfig = {
           },
         },
       },
-      {
-        urlPattern: /https:\/\/api\.spaceXdata\.com\/v3\/launches?limit=100/,
-        handler: 'StaleWhileRevalidate',
-        options: {
-          cacheName: 'data',
-          expiration: {
-            maxEntries: 10,
-            maxAgeSeconds: 24 * 60 * 60, // 1 day
-          },
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
-        },
-      }
     ],
   },
 };
