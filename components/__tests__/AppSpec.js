@@ -57,6 +57,6 @@ describe('App',() => {
         const tree = renderer.create(<App {...appProps}/>).root
         tree.instance.fetchData = jest.fn()
         tree.instance.onFilterChange(filters)
-        expect(tree.instance.fetchData).toHaveBeenCalledWith(filterssta)
+        expect(tree.instance.fetchData).toHaveBeenCalledWith(filters)
     })
 })
