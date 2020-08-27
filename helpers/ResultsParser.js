@@ -4,7 +4,7 @@ import isEmpty from 'lodash/isEmpty'
 const getLandingSuccess = (item) => {
   const cores = get(item, 'rocket.first_stage.cores')
   if (!isEmpty(cores)) {
-    return !cores.some(core => !core.land_success)
+    return cores.some(core => core.land_success)
   }
   return false
 }
