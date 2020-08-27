@@ -22,7 +22,7 @@ export default class Card extends React.Component {
     const imageSrc = this.fetchImageSrc(missionPatchImage)
     return (
       <div className='mainCard'>
-        <img alt="Image Unavailable" src={imageSrc} />
+        <img alt='Image Unavailable' src={imageSrc} />
         <div className='text missionName'>{missionName} #{flightNumber}</div>
         <div className='text missionId'>Mission Ids:
           <div className='missionIds'>{isMissionIdPresent ? missionId.join() : 'Unavailable'}</div>
