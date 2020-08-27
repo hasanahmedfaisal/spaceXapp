@@ -26,7 +26,9 @@ npm run dev
 Application should be available at (http://localhost:3000) 
 
 ## Tests
- Unit tests have been written using [jest](https://jestjs.io/). For rendering snapshots [react-test-renderer](https://reactjs.org/docs/test-renderer.html) has been made use of. Run test simply by using `npm test`. Coverage is more than 80%. Screenshot of latest is attached below: 
+ Unit tests have been written using [jest](https://jestjs.io/). For rendering snapshots [react-test-renderer](https://reactjs.org/docs/test-renderer.html) has been made use of. Run test simply by using `npm test`. Screenshot of latest coverage is attached below: 
+ 
+ ![Alt text]( https://user-images.githubusercontent.com/43376627/91439449-e08e0980-e864-11ea-8c09-2516766dd52e.png "Coverage")
  
  ## Performance
  Lighthouse score is attached below:
