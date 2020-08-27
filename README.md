@@ -27,3 +27,7 @@ Application should be available at (http://localhost:3000)
 
 ## Tests
  Run test using `npm test`. 
+ 
+ ## Performance
+ Lighthouse score is attached below:
+ ![Alt text]( https://user-images.githubusercontent.com/43376627/91432096-2513a800-e859-11ea-9985-5bae5f029338.png "Lighthouse score") 
