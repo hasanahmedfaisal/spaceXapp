@@ -5,6 +5,7 @@ exports[`Card Filter should render correctly 1`] = `
   className="mainCard"
 >
   <img
+    alt="Image Unavailable"
     src="some url"
   />
   <div
