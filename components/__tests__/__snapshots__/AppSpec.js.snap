@@ -492,6 +492,7 @@ exports[`App should render correctly when no filters are present 1`] = `
         className="mainCard"
       >
         <img
+          alt="Image Unavailable"
           src="some url"
         />
         <div

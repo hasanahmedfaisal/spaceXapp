@@ -3,6 +3,8 @@ node_js:
   - 12
 jobs:
   include:
+  - stage: Run Standard Style check 
+    script: "npm run standard"
   - stage: Running Unit Tests
     script: "npm test"
   - stage: deploy to production
