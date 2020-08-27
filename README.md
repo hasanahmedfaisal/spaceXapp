@@ -1,5 +1,5 @@
 ## SpaceX Launches
-Web Application which lists all launches by SpaceX program.
+Responsive web application which lists and orgainizes all launches by SpaceX program.Launches can be filtered using launch year, launch status and landing status.
 
 ## Build status
 Travis is used for continuous integration.
@@ -26,7 +26,7 @@ npm run dev
 Application should be available at (http://localhost:3000) 
 
 ## Tests
- Run test using `npm test`. 
+ Unit tests have been written using [jest](https://jestjs.io/). For rendering snapshots [react-test-renderer](https://reactjs.org/docs/test-renderer.html) has been made use of. Run test simply by using `npm test`. Coverage is more than 80%. Screenshot of latest is attached below: 
  
  ## Performance
  Lighthouse score is attached below:

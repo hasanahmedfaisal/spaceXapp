@@ -1,5 +1,5 @@
 import { jsonToQueryString } from './QueryStringHelper'
-import Constants from '../config/Constants'
+import Constants from '../constants'
 
 export default function getRequestDetails (query) {
   const filters = {}

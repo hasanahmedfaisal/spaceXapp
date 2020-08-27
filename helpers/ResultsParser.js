@@ -16,7 +16,7 @@ const parse = (res) => {
     mission_id: item.mission_id,
     launch_year: item.launch_year,
     launch_success: item.launch_success,
-    land_success: getLandingSuccess(res),
+    land_success: getLandingSuccess(item),
     mission_patch_small: item.links.mission_patch_small
   }))
 }

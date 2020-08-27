@@ -1,4 +1,5 @@
-import Constants from '../Constants'
+/* eslint-env jest */
+import Constants from '../index'
 
 describe('config', () => {
   it('should return base url', () => {

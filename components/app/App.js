@@ -16,16 +16,17 @@ class App extends React.Component {
       isError: false
     }
     this.fetchData = this.fetchData.bind(this)
+    this.onFilterChange = this.onFilterChange.bind(this)
   }
 
-  componentDidMount () {
+  async componentDidMount () {
     if (!isEmpty(this.props.filters)) {
-      this.fetchData(this.props.filters)
+      await this.fetchData(this.props.filters)
     }
   }
 
-  async onFilterChange (selectedFilters) {
-    await this.fetchData(selectedFilters)
+  onFilterChange (selectedFilters) {
+    this.fetchData(selectedFilters)
   }
 
   async fetchData (selectedFilters) {

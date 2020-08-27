@@ -3,7 +3,7 @@ import App from '../components/app/App'
 import getRequestDetails from '../helpers/RequestHelper'
 import { parse } from '../helpers/ResultsParser'
 import Head from 'next/head'
-import Constants from '../config/Constants'
+import Constants from '../constants'
 
 const AppContainer = (props) => {
   return (
