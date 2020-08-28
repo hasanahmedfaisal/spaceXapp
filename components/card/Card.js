@@ -2,7 +2,7 @@ import React from 'react'
 import isEmpty from 'lodash/isEmpty'
 
 export default class Card extends React.Component {
-  fetchImageSrc (missionPatchImage) {
+  fetchImageSrc(missionPatchImage) {
     try {
       if (missionPatchImage == null) { return '' } else { return `/${missionPatchImage.split('/')[5].split('.')[0]}.webp` }
     } catch (error) {
@@ -10,7 +10,7 @@ export default class Card extends React.Component {
     }
   }
 
-  render () {
+  render() {
     const missionName = this.props.cardProps.mission_name
     const flightNumber = this.props.cardProps.flight_number
     const launchYear = this.props.cardProps.launch_year
@@ -22,7 +22,10 @@ export default class Card extends React.Component {
     const imageSrc = this.fetchImageSrc(missionPatchImage)
     return (
       <div className='mainCard'>
-        <img alt='Image Unavailable' src={imageSrc} />
+        <picture>
+          <source srcSet={imageSrc} type='image/webp' />
+          <img alt='Image Unavailable' src={missionPatchImage} />
+        </picture>
         <div className='text missionName'>{missionName} #{flightNumber}</div>
         <div className='text missionId'>Mission Ids:
           <div className='missionIds'>{isMissionIdPresent ? missionId.join() : 'Unavailable'}</div>

@@ -52,7 +52,7 @@
   
   .mainCardContainer {
     min-width: 300px;
-    height: fit-content;
+    max-height: 600px;
     background: white;
     border:5px;
     border-radius: 10px;
