@@ -2,9 +2,27 @@ import React from 'react'
 import isEmpty from 'lodash/isEmpty'
 
 export default class Card extends React.Component {
+  canUseWebP () {
+    var elem = document.createElement('canvas')
+
+    if (elem.getContext && elem.getContext('2d')) {
+      // was able or not to get WebP representation
+      return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0
+    }
+
+    // very old browser like IE 8, canvas not supported
+    return false
+  }
+
   fetchImageSrc (missionPatchImage) {
     try {
-      if (missionPatchImage == null) { return '' } else { return `/${missionPatchImage.split('/')[5].split('.')[0]}.webp` }
+      if (missionPatchImage == null) {
+        return ''
+      } else if (this.canUseWebP()) {
+        return `/${missionPatchImage.split('/')[5].split('.')[0]}.webp`
+      } else {
+        return missionPatchImage
+      }
     } catch (error) {
       return missionPatchImage
     }
