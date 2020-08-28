@@ -2,19 +2,7 @@ import React from 'react'
 import isEmpty from 'lodash/isEmpty'
 
 export default class Card extends React.Component {
-  canUseWebP () {
-    var elem = document.createElement('canvas')
-
-    if (elem.getContext && elem.getContext('2d')) {
-      // was able or not to get WebP representation
-      return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0
-    }
-
-    // very old browser like IE 8, canvas not supported
-    return false
-  }
-
-  fetchImageSrc (missionPatchImage) {
+  fetchImageSrc(missionPatchImage) {
     try {
       if (missionPatchImage == null) {
         return ''
@@ -28,7 +16,7 @@ export default class Card extends React.Component {
     }
   }
 
-  render () {
+  render() {
     const missionName = this.props.cardProps.mission_name
     const flightNumber = this.props.cardProps.flight_number
     const launchYear = this.props.cardProps.launch_year
@@ -40,7 +28,10 @@ export default class Card extends React.Component {
     const imageSrc = this.fetchImageSrc(missionPatchImage)
     return (
       <div className='mainCard'>
-        <img alt='Image Unavailable' src={imageSrc} />
+        <picture>
+          <source srcSet={imageSrc} type='image/webp' />
+          <img alt='Image Unavailable' src={missionPatchImage} />
+        </picture>
         <div className='text missionName'>{missionName} #{flightNumber}</div>
         <div className='text missionId'>Mission Ids:
           <div className='missionIds'>{isMissionIdPresent ? missionId.join() : 'Unavailable'}</div>

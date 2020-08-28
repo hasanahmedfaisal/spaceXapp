@@ -491,10 +491,16 @@ exports[`App should render correctly when no filters are present 1`] = `
       <div
         className="mainCard"
       >
-        <img
-          alt="Image Unavailable"
-          src="some url"
-        />
+        <picture>
+          <source
+            srcSet="some url"
+            type="image/webp"
+          />
+          <img
+            alt="Image Unavailable"
+            src="some url"
+          />
+        </picture>
         <div
           className="text missionName"
         >
